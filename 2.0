@@ -1,0 +1,32 @@
+print("Oh my my my! How well do you know Troye Sivan? ")
+
+playing = input("Do you want to play?? (yes/no) ")
+if playing.lower() != "yes":
+    quit()
+
+print("COOL! Lets have some FUN! ;) ")
+
+questions = [("What is Troye Sivan's middle name?", "Jacob"),
+             ("What year was Troye Sivan born?", "1995"),
+             ("Which of the following is one of Troye's favorite artists? A) Miranda lambert B) Lady Gaga or C) Amy Winehouse ", "C"),
+             ("In what song do the lyrics 'I even Wrote it in japanese, Baby. you didn't give a fuck' appear A) Postcard B) Plum or C) Gasoline ?", "A"),
+             ("TRUE Or FALSE: Troye Sivan was Homeschooled", "TRUE"),
+             ("What is the title of Troye Sivan's debut studio album?", "Blue Neighbourhood")]
+
+score = 0
+
+for question, correct_answer in questions:
+    answer = input(question)
+    if answer.upper() == correct_answer.upper():
+        score += 1
+        print("Correct!")
+    else:
+        print("Incorrect.")
+
+if score == len(questions):
+    print("Wow! You got all the answers correct! You're a true fan!")
+elif score >= len(questions) // 2:
+    print(f"Not bad! You got {score} out of {len(questions)} correct.")
+else:
+    print(f"You only got {score} out of {len(questions)} correct. Better luck next time!")
+
